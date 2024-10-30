@@ -1,3 +1,3 @@
-module alevitt.com/first.project
+module alevitt.com/investment-calculator
 
 go 1.23.2
