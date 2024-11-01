@@ -1,13 +1,12 @@
 package main
 
-/*import (
+import (
 	"fmt"
 	"math"
-)*/
+)
 
-func main() {
-	countProfit()
-	/*const inflationRate = 2.5
+func countInvestment() {
+	const inflationRate = 2.5
 	var investmentAmount, expectedReturnRate, years float64
 
 	fmt.Print("Enter investment amount: ")
@@ -19,6 +18,6 @@ func main() {
 
 	futureValue := investmentAmount * math.Pow(1+expectedReturnRate/100, years)
 	futureRealValue := futureValue / math.Pow(1+inflationRate/100, years)
-	fmt.Println("Feature value:", futureValue)
-	fmt.Println("Real future value:", futureRealValue)*/
+	fmt.Printf("Feature value: %.2f\n", futureValue)
+	fmt.Printf("Real future value: %.2f", futureRealValue)
 }

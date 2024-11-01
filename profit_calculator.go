@@ -14,9 +14,8 @@ func countProfit() {
 
 	ebt := revenue - expenses
 	profit := ebt * (1 - taxRate/100)
-	fmt.Println("EBT: ", ebt)
-	fmt.Println("Profit: ", profit)
+	fmt.Printf("EBT: %.2f\nProfit: %.2f\n", ebt, profit)
 
 	ratio := ebt / profit
-	fmt.Println("Ratio: ", ratio)
+	fmt.Println("Ratio:", ratio)
 }
