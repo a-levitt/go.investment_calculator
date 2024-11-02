@@ -12,10 +12,15 @@ func countProfit() {
 	fmt.Print("Enter taxRate: ")
 	fmt.Scan(&taxRate)
 
-	ebt := revenue - expenses
-	profit := ebt * (1 - taxRate/100)
+	ebt, profit := countEbtProfit(revenue, expenses, taxRate)
 	fmt.Printf("EBT: %.2f\nProfit: %.2f\n", ebt, profit)
 
 	ratio := ebt / profit
-	fmt.Println("Ratio:", ratio)
+	fmt.Printf("Ratio: %.2f", ratio)
+}
+
+func countEbtProfit(revenue, expenses, taxRate float64) (float64, float64) {
+	ebt := revenue - expenses
+	profit := ebt * (1 - taxRate/100)
+	return ebt, profit
 }
