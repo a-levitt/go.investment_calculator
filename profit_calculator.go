@@ -3,6 +3,7 @@ package main
 import (
 	"errors"
 	"fmt"
+	"os"
 )
 
 func countProfit() {
@@ -27,6 +28,8 @@ func countProfit() {
 
 	ratio := ebt / profit
 	fmt.Printf("Ratio: %.2f", ratio)
+
+	storeResults(ebt, profit, ratio)
 }
 
 func getUserInput(infoText string) (float64, error) {
@@ -43,4 +46,9 @@ func countEbtProfit(revenue, expenses, taxRate float64) (float64, float64) {
 	ebt := revenue - expenses
 	profit := ebt * (1 - taxRate/100)
 	return ebt, profit
+}
+
+func storeResults(ebt, profit, ratio float64) {
+	results := fmt.Sprintf("EBT: %.2f\nProfit: %.2f\nRatio: %.3f\n", ebt, profit, ratio)
+	os.WriteFile("calculation_results.txt", []byte(results), 0644)
 }
